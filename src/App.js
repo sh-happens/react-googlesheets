@@ -5,7 +5,7 @@ import axios from "axios";
 
 const App = () => {
   const [lastName, setlastName] = useState("kosbayev")
-  const [name, setName] = useState("yerbol")
+  const [name, setName] = useState("")
   const [age, setAge] = useState("")
   const [salary, setSalary] = useState("")
   const [hobby, setHobby] = useState("")
@@ -37,20 +37,19 @@ const handleSubmit = (e) => {
 
 
   return (
-  <div className="row ">
+  <div className="row container">
     <form className="col s12" onSubmit={handleSubmit}>
-      
-        <label>
-          Pick your favorite flavor:
-          <select value={name} onChange={(e) => setName(e.target.value)}>
-            <option value={name}>name</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
+      <div className="row">
+        <div className="input-field col s12">
+          <select value="" className="browser-default">
+            <option value="" disabled selected >Choose your option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
           </select>
-        </label>
-      
-      {/* <div className="row">
+        </div>
+      </div>
+      <div className="row">
         <div className="input-field col s12">
           <input 
                 value={name} 
@@ -109,7 +108,7 @@ const handleSubmit = (e) => {
             />
             <label htmlFor="email">Email</label>
           </div>
-      </div> */}
+      </div>
       <button className="btn" type="submit">SUBMIT</button>
     </form>
   </div>
